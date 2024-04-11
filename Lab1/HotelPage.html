@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Italiana&family=Roboto+Flex:opsz,wght@8..144,300&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Hotel Page</title>
+  </head>
+  <body>
+    <nav class="fixed-navigation">
+      <img class="logo" src="./Assets/logo.svg" />
+      <ul class="nav-links">
+        <li><a class="nav-link" href="#">Home</a></li>
+        <li>
+          <a class="nav-link" href="#find">Find offers</a>
+        </li>
+        <li><a class="nav-link" href="#add">Add new offers</a></li>
+        <li><a class="nav-link" href="#my">My offers</a></li>
+        <li><a class="nav-link" href="#favorites">Favorites</a></li>
+        <button class="button primary">Log out</button>
+      </ul>
+      <button class="button primary hidden">Menu</button>
+    </nav>
+    <section id="hero" class="grid hotel-page-section">
+      <p class="title-large-hotel-page">Serene Reatreat</p>
+      <div class="hotel-page-container">
+        <div class="hotel-page-image"></div>
+        <div class="hotel-page-text">
+          <p><b>Location:</b> Madrid</p>
+          <p><b>Local category:</b> ★★★★☆</p>
+          <p><b>Price:</b> 70€/room/night</p>
+          <p><b>Descripton:</b></p>
+          <p class="text-block">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec leo
+            ligula. Etiam fermentum est in euismod egestas. Curabitur at
+            condimentum ligula. Phasellus nunc velit, facilisis fermentum congue
+            ac, cursus at leo. Interdum et malesuada fames ac ante ipsum primis
+            in faucibus. Nullam nec sapien vitae neque scelerisque tempus.
+            Vestibulum hendrerit tellus ut pulvinar feugiat. Nullam iaculis
+            vitae justo sit amet tempus. Nam nunc nunc, porttitor sed turpis
+            quis, feugiat egestas leo. Phasellus consequat magna ante, ac
+            aliquam felis convallis sit amet. Sed massa lorem, iaculis ac
+            vestibulum ac, tempus a tortor. Ut posuere ipsum nec condimentum
+            vehicula. Curabitur orci velit, aliquam vel arcu quis, semper congue
+            ligula.
+          </p>
+          <button data-open-modal class="button primary">Contact</button>
+
+          <dialog data-modal class="modal">
+            <button data-close-modal class="button close">X</button>
+            <p class="modal-text1">Contact</p>
+            <p class="modal-text2">You're contacting the [hotel name] hotel</p>
+            <form>
+              <input class="modal-input" />
+            </form>
+            <div class="modal-buttons">
+              <button data-close-modal class="button">Cancel</button>
+              <button class="button primary">Send</button>
+            </div>
+          </dialog>
+
+          <script>
+            const openButton = document.querySelector("[data-open-modal]");
+            const closeButton = document.querySelectorAll("[data-close-modal]");
+            const modal = document.querySelector("[data-modal]");
+
+            openButton.addEventListener("click", () => {
+              modal.showModal();
+            });
+            closeButton.forEach((closeButton) => {
+              closeButton.addEventListener("click", () => {
+                modal.close();
+              });
+            });
+          </script>
+
+          <div class="hero-cards">
+            <div class="card-image-2nd"></div>
+            <div class="card-image-2nd"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
