@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body
+    class="bg-gradient-to-r from-indigo-500 to-pink-500 flex justify-center min-h-[100vh]"
+  >
+    <div
+      class="bg-white mt-24 pb-5 rounded-2xl px-5 pt-5 pb-5 shadow-lg"
+      style="width: 450px"
+    >
+      <div class="flex items-center justify-center space-x-2">
+        <i class="fa fa-list text-xl"></i>
+        <div class="text-2xl font-bold">To-Do List</div>
+      </div>
+      <div class="flex flex-col items-center">
+        <input
+          type="text"
+          class="border-2 border-gray-300 rounded-lg w-2/5 px-4 p-1 mt-5"
+          placeholder="Search for tasks"
+          id="search-box"
+          oninput="filterTasks()"
+        />
+        <select
+          id="list-selector"
+          class="border-2 border-gray-300 rounded-lg w-2/5 p-1 mt-2"
+        >
+          <option value="" disabled selected>Choose a list</option>
+          <option value="high" class="text-red-500">High Importance</option>
+          <option value="medium" class="text-yellow-500">
+            Medium Importance
+          </option>
+          <option value="low" class="text-green-500">Low Importance</option>
+        </select>
+      </div>
+      <input
+        type="text"
+        class="border-2 border-gray-300 rounded-lg w-4/5 px-4 p-1 mt-5"
+        placeholder="Add a new task"
+        id="input-box"
+      />
+      <button
+        class="bg-green-500 text-white rounded-lg px-5 p-1 mt-2"
+        onclick="addTask()"
+      >
+        Add
+      </button>
+
+      <h3 class="text-left mt-8 font-bold text-red-500">High Importance:</h3>
+      <ul class="px-2 space-y-2 cursor-pointer" id="high-list"></ul>
+
+      <h3 class="text-left mt-8 font-bold text-yellow-500">
+        Medium Importance:
+      </h3>
+      <ul class="px-2 space-y-2 cursor-pointer" id="medium-list"></ul>
+
+      <h3 class="text-left mt-8 font-bold text-green-500">Low Importance:</h3>
+      <ul class="px-2 space-y-2 cursor-pointer" id="low-list"></ul>
+
+      <button
+        class="bg-blue-500 text-white rounded-lg px-5 p-1 mt-8"
+        style="display: block; margin-left: auto; margin-right: auto"
+        onclick="reverseDeletion()"
+      >
+        Reverse Deletion
+      </button>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
